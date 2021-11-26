@@ -15,8 +15,6 @@ public class EnemySpawner : MonoBehaviour
         var collider = GetComponent<Collider>();
         this.offset = collider.bounds.min;
         this.dimensions = collider.bounds.size;
-        Debug.Log(offset);
-        Debug.Log(dimensions);
     }
 
     private void Start()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MatchTimer : MonoBehaviour
 {
@@ -18,9 +19,9 @@ public class MatchTimer : MonoBehaviour
     {
         this.matchDuration -= 1;
 
-        if (matchDuration >= 0)
+        if (matchDuration <= 0)
         {
-            //TODO: End match
+            SceneManager.LoadSceneAsync(2);
         }
 
         //Cheap formatting because I'm sleepy
