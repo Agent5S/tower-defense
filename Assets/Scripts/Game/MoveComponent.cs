@@ -34,4 +34,14 @@ public class MoveComponent : MonoBehaviour
 
         defaultMove.agents.Add(agent);
     }
+
+    private void OnEnable()
+    {
+        this.agent.enabled = true;
+    }
+
+    private void OnDisable()
+    {
+        this.agent.enabled = false;
+    }
 }

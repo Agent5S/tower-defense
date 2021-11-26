@@ -339,9 +339,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 44
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 8.7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -364,13 +364,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151185380}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0.1, y: 26.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
 --- !u!114 &151185384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,11 +741,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 322374704}
+  - component: {fileID: 322374705}
   - component: {fileID: 322374703}
   - component: {fileID: 322374702}
   - component: {fileID: 322374701}
   - component: {fileID: 322374700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower A2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -793,7 +794,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 95a0f18fbfc154e2d9692e33d6918aca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1045,6 +1046,34 @@ Transform:
   m_Father: {fileID: 1543989548}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &322374705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322374699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb4612fbe9bb498b866cf6b47043b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+  willDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 997861336}
+        m_TargetAssemblyTypeName: BulkMoveComponent, Assembly-CSharp
+        m_MethodName: RemoveTower
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 322374704}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &418469818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,11 +1083,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 418469823}
+  - component: {fileID: 418469824}
   - component: {fileID: 418469822}
   - component: {fileID: 418469821}
   - component: {fileID: 418469820}
   - component: {fileID: 418469819}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tower B1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1106,7 +1136,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: e985b43d6938d4f5c80d71a5a314d5de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1358,6 +1388,34 @@ Transform:
   m_Father: {fileID: 944290041}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &418469824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418469818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb4612fbe9bb498b866cf6b47043b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+  willDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 942573948}
+        m_TargetAssemblyTypeName: BulkMoveComponent, Assembly-CSharp
+        m_MethodName: RemoveTower
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 418469823}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!43 &587190140
 Mesh:
   m_ObjectHideFlags: 0
@@ -1747,7 +1805,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: f9132c5c98041471e991d7231842eeb9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2244,8 +2302,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1270249493}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2391,7 +2448,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 2f201ceacf2d54a39bb4ee8d596909a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5223,174 +5280,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1270249486
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1270249493}
-  - component: {fileID: 1270249492}
-  - component: {fileID: 1270249491}
-  - component: {fileID: 1270249490}
-  - component: {fileID: 1270249494}
-  - component: {fileID: 1270249489}
-  - component: {fileID: 1270249488}
-  - component: {fileID: 1270249487}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1270249487
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270249486}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1270249488
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270249486}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1270249489
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270249486}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1270249490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270249486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdb4612fbe9bb498b866cf6b47043b6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
---- !u!114 &1270249491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270249486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e51e5c894a24472fa894d4ef614e204, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 3
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  defaultMove: {fileID: 942573948}
---- !u!114 &1270249492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270249486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98887b28b1654ffbb72d3adf094fa0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 1
-  hitStrength: 20
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!4 &1270249493
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270249486}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.75, z: 0}
-  m_LocalScale: {x: 1, y: 1.5, z: 1}
-  m_Children: []
-  m_Father: {fileID: 942573949}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &1270249494
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270249486}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 1.5
-  m_Acceleration: 4
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &1358251633
 GameObject:
   m_ObjectHideFlags: 0
@@ -5400,11 +5289,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1358251638}
+  - component: {fileID: 1358251639}
   - component: {fileID: 1358251637}
   - component: {fileID: 1358251636}
   - component: {fileID: 1358251635}
   - component: {fileID: 1358251634}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tower B2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5452,7 +5342,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: e985b43d6938d4f5c80d71a5a314d5de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5704,6 +5594,34 @@ Transform:
   m_Father: {fileID: 944290041}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1358251639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358251633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb4612fbe9bb498b866cf6b47043b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+  willDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 942573948}
+        m_TargetAssemblyTypeName: BulkMoveComponent, Assembly-CSharp
+        m_MethodName: RemoveTower
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1358251638}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1402328511
 GameObject:
   m_ObjectHideFlags: 0
@@ -5713,11 +5631,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1402328516}
+  - component: {fileID: 1402328517}
   - component: {fileID: 1402328515}
   - component: {fileID: 1402328514}
   - component: {fileID: 1402328513}
   - component: {fileID: 1402328512}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tower B0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5765,7 +5684,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: e985b43d6938d4f5c80d71a5a314d5de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6017,6 +5936,34 @@ Transform:
   m_Father: {fileID: 944290041}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1402328517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402328511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb4612fbe9bb498b866cf6b47043b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+  willDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 942573948}
+        m_TargetAssemblyTypeName: BulkMoveComponent, Assembly-CSharp
+        m_MethodName: RemoveTower
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1402328516}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1543989547
 GameObject:
   m_ObjectHideFlags: 0
@@ -6213,11 +6160,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1782699360}
+  - component: {fileID: 1782699361}
   - component: {fileID: 1782699359}
   - component: {fileID: 1782699358}
   - component: {fileID: 1782699357}
   - component: {fileID: 1782699356}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower A0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6265,7 +6213,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 95a0f18fbfc154e2d9692e33d6918aca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6517,6 +6465,34 @@ Transform:
   m_Father: {fileID: 1543989548}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1782699361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782699355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb4612fbe9bb498b866cf6b47043b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+  willDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 997861336}
+        m_TargetAssemblyTypeName: BulkMoveComponent, Assembly-CSharp
+        m_MethodName: RemoveTower
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1782699360}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1828883476
 GameObject:
   m_ObjectHideFlags: 0
@@ -6526,11 +6502,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1828883481}
+  - component: {fileID: 1828883482}
   - component: {fileID: 1828883480}
   - component: {fileID: 1828883479}
   - component: {fileID: 1828883478}
   - component: {fileID: 1828883477}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower A1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6578,7 +6555,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 95a0f18fbfc154e2d9692e33d6918aca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6830,6 +6807,34 @@ Transform:
   m_Father: {fileID: 1543989548}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1828883482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828883476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb4612fbe9bb498b866cf6b47043b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+  willDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 997861336}
+        m_TargetAssemblyTypeName: BulkMoveComponent, Assembly-CSharp
+        m_MethodName: RemoveTower
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1828883481}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!43 &1940878220
 Mesh:
   m_ObjectHideFlags: 0

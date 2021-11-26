@@ -8,6 +8,8 @@ public class BulkMoveComponent : MonoBehaviour
     public List<Transform> towers;
     public List<NavMeshAgent> agents = new List<NavMeshAgent>();
 
+    public List<Transform> array { get => towers; }
+
     // Update is called once per frame
     void Update()
     {
@@ -26,5 +28,10 @@ public class BulkMoveComponent : MonoBehaviour
             agent.SetDestination(target);
         });
         agents.Clear();
+    }
+
+    public void RemoveTower(Transform tower)
+    {
+        this.towers.Remove(tower);
     }
 }

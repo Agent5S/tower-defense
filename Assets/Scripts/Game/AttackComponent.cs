@@ -6,20 +6,23 @@ public class AttackComponent : MonoBehaviour
 {
     public float radius;
     public float hitStrength;
-    public WaitForSeconds hitDelay;
+    public float hitDelay;
     public LayerMask layerMask;
 
     private Collider[] result = new Collider[1];
     private MoveComponent moveComp;
+    private WaitForSeconds waitForDelay;
+    private Coroutine coroutine;
 
     private void Awake()
     {
         this.moveComp = GetComponent<MoveComponent>();
+        this.waitForDelay = new WaitForSeconds(hitDelay);
     }
 
     private void Update()
     {
-        StartCoroutine(Attack());
+        this.coroutine = StartCoroutine(Attack());
     }
 
     private IEnumerator Attack()
@@ -33,13 +36,19 @@ public class AttackComponent : MonoBehaviour
 
         if (count > 0)
         {
-            //Stop movement while hit is is progress
-            this.moveComp.enabled = false;
-            yield return hitDelay;
-
             var damageComp = result[0].GetComponent<ReceiveDamageComponent>();
-            //TODO: Perform hit
-            this.moveComp.enabled = true;
+            if (damageComp)
+            {
+                //Stop movement while hit is is progress
+                this.moveComp.enabled = false;
+                this.enabled = false;
+                damageComp.ReceiveDamage(hitStrength);
+
+                yield return waitForDelay;
+                this.moveComp.enabled = true;
+                this.enabled = true;
+            }
         }
     }
+
 }
