@@ -8,38 +8,43 @@ public class PositionRaycaster : MonoBehaviour
     public GameObject prefab;
     public MeshRenderer prev;
     public BulkMoveComponent teamA;
+    public CooldownTimer timer;
 
     private Camera cam;
     private Collider coll;
     private MeshRenderer rend;
     private RaycastHit result;
     private Vector2 mousePos;
-    private PlayerInput input;
+    private DefaultInputActions input;
 
     private void Awake()
     {
         this.cam = Camera.main;
         this.coll = GetComponent<Collider>();
         this.rend = GetComponent<MeshRenderer>();
-        this.input = GetComponent<PlayerInput>();
+        this.input = new DefaultInputActions();
     }
 
     private void OnEnable()
     {
         this.rend.enabled = true;
-        this.input.enabled = true;
+        this.input.Enable();
+        this.input.UI.Point.performed += OnPoint;
+        this.input.UI.Click.performed += OnClick;
     }
 
     private void OnDisable()
     {
         this.rend.enabled = false;
-        this.input.enabled = false;
         this.prev.enabled = false;
+        this.input.Disable();
+        this.input.UI.Point.performed -= OnPoint;
+        this.input.UI.Click.performed -= OnClick;
     }
 
-    void OnPoint(InputValue value)
+    void OnPoint(InputAction.CallbackContext context)
     {
-        this.mousePos = value.Get<Vector2>();
+        this.mousePos = context.ReadValue<Vector2>();
         var ray = cam.ScreenPointToRay(mousePos);
 
         var hit = coll.Raycast(ray, out result, float.PositiveInfinity);
@@ -55,10 +60,8 @@ public class PositionRaycaster : MonoBehaviour
         this.prev.enabled = false;
     }
 
-    void OnClick(InputValue value)
+    void OnClick(InputAction.CallbackContext context)
     {
-        if (value.isPressed) { return; }
-
         var ray = cam.ScreenPointToRay(mousePos);
 
         var hit = coll.Raycast(ray, out result, float.PositiveInfinity);
@@ -71,6 +74,7 @@ public class PositionRaycaster : MonoBehaviour
             //character.transform.parent = teamA;
             var moveComp = character.GetComponent<MoveComponent>();
             moveComp.defaultMove = teamA;
+            timer.StartTicking();
         }
 
         this.prev.enabled = false;
