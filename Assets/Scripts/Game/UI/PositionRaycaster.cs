@@ -71,7 +71,7 @@ public class PositionRaycaster : MonoBehaviour
             var position = result.point;
             var character = Instantiate(prefab);
             character.transform.position = position;
-            //character.transform.parent = teamA;
+            character.transform.parent = teamA.transform;
             var moveComp = character.GetComponent<MoveComponent>();
             moveComp.defaultMove = teamA;
             timer.StartTicking();
